@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  allowNewServer = false;
+  serverName = 'Testserver'
+
+  constructor() {
+    setTimeout( () => this.allowNewServer = true, 2000);
+  }
+  
 }
