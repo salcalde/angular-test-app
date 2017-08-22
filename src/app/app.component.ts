@@ -7,11 +7,22 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
-  allowNewServer = false;
-  serverName = 'Testserver'
+  username = '';
+  fieldClearable = false;
 
-  constructor() {
-    setTimeout( () => this.allowNewServer = true, 2000);
+  constructor() {};
+
+  checkUsername(e: Event) {
+    if ((<HTMLInputElement>e.target).value !== '') {
+      this.fieldClearable = true
+    } else {
+      this.fieldClearable = false;
+    }
   }
-  
+
+  clearUsername() {
+    this.username = '';
+    this.fieldClearable = false;
+  }
+
 }

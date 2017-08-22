@@ -1,10 +1,8 @@
-<label>Server Name</label>
-<input
-  type="text"
-  class="form-control"
-  [(ngModel)]="serverName">
-  <p>{{ serverName }}</p>
-<button
-class="btn btn-primary"
-[disabled]="!allowNewServer">Add Server</button>
-
+<app-servers></app-servers>
+<input  id="username"
+        [(ngModel)]="username"
+        (keyup)="checkUsername($event)">
+<p>{{ username }}</p>
+<button class="btn btn-primary"
+        [disabled]="!fieldClearable"
+        (click)="clearUsername()">Clear Username</button>
